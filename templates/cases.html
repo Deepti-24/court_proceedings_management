@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.content {
+  height: 580px;
+  background-color: #ddd;
+  padding: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #2f4f4f;
+  color: white;
+}
+
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="/userHome">Home</a>
+  <a href="/showNewCase">Add new case</a>
+  <a href="showUpdateCase">Update case</a>
+  <a href="/logout">Logout</a>
+</div>
+
+<div class="content">
+  <h1>Criminal Case Records</h1>
+
+  <table>
+            <thead>
+              <tr>
+                <th>Case ID</th>
+                <th>FIR No</th>
+                <th>Victim</th>
+                <th>Case Type</th>
+                <th>Accused</th>
+                <th>Court Name</th>
+                <th>Judge</th>
+                <th>Defence ID</th>
+                <th>Prosecutor ID</th>
+                <th>Last Hearing Date</th>
+                <th>Next Hearing Date</th>
+                <th>Final Verdict</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in value %}
+              <tr>
+                  <td>{{row[0]}}</td>
+                  <td>{{row[1]}}</td>
+                  <td>{{row[2]}}</td>
+                  <td>{{row[3]}}</td>
+                  <td>{{row[4]}}</td>
+                  <td>{{row[5]}}</td>
+                  <td>{{row[6]}}</td>
+                  <td>{{row[7]}}</td>
+                  <td>{{row[8]}}</td>
+                  <td>{{row[9]}}</td>
+                  <td>{{row[10]}}</td>
+                  <td>{{row[11]}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+  </table>
+
+</div>
+</body>
+</html>
